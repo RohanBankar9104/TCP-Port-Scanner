@@ -1,81 +1,221 @@
-A fast and efficient multithreaded TCP Port Scanner developed in Python. This tool scans a specified range of ports on a target host and identifies whether ports are open, closed, or timed out. Scan results are displayed in real time and automatically saved to a log file.
+# 🌐 TCP Port Scanner
 
--Features-
-1.Multi-threaded scanning for improved speed
-2.Custom port range selection
-3.Hostname and IP address support
-4.Real-time scan results
-5.Automatic logging to scan_results.txt
-6.Socket-based TCP connection testing
-7.Error and timeout handling
-8.Technologies Used
-9.Python 3
-10.Socket Programming
-11.Multithreading
-12.Queue Management
+A high-performance multithreaded TCP Port Scanner built in Python that efficiently scans a target host for open, closed, and filtered ports. The scanner utilizes socket programming and concurrent threading to accelerate the scanning process while maintaining reliable results and automatic logging.
 
---How It Works--
+---
 
--The scanner:
+## 📌 Overview
 
-1.Resolves the target hostname to an IP address.
-2.Creates multiple worker threads.
-3.Assigns ports to threads using a queue.
-4.Attempts TCP connections to each port.
-5.Reports whether ports are:
-                            OPEN
-                            CLOSED
-                            TIMEOUT
-6.Saves results to a log file.
+Port scanning is one of the most fundamental techniques used in networking and cybersecurity to identify open services running on a system.
 
---Installation--
-git clone https://github.com/RohanBankar9104/TCP-Port-Scanner
+This project demonstrates how TCP port scanning works by attempting TCP connections to a specified range of ports and reporting their status. The application uses multithreading to significantly improve scanning speed and automatically stores results for later analysis.
 
---Usage--
-python PortScanner.py
+---
 
--Example:
+## 🚀 Features
 
-Enter target host/IP: scanme.nmap.org
-Start Port: 1
-End Port: 1000
-Output Example
-Port 22    : OPEN
-Port 80    : OPEN
-Port 443   : OPEN
-Port 21    : CLOSED
+* ⚡ Fast multithreaded scanning
+* 🌐 Hostname and IP address support
+* 🔍 Custom port range selection
+* 📊 Real-time scan results
+* 📝 Automatic result logging
+* ⏱ Timeout handling
+* 🛡 Error handling and validation
+* 📂 Results exported to text file
 
-Results are automatically saved to:
+---
 
-scan_results.txt
-Project Structure
+## 🏗️ How It Works
+
+The scanner follows these steps:
+
+1. User enters a target hostname or IP address.
+2. Hostname is resolved into an IP address.
+3. Multiple worker threads are created.
+4. Ports are added to a task queue.
+5. Each thread attempts a TCP connection.
+6. Port status is determined:
+
+   * OPEN
+   * CLOSED
+   * TIMEOUT
+7. Results are displayed and saved to a log file.
+
+---
+
+## 🛠️ Technologies Used
+
+| Technology         | Purpose                  |
+| ------------------ | ------------------------ |
+| Python             | Core Development         |
+| Socket Programming | Network Communication    |
+| Multithreading     | Concurrent Port Scanning |
+| Queue Module       | Task Management          |
+| Datetime Module    | Performance Tracking     |
+
+---
+
+## 📂 Project Structure
+
+```text
 TCP-Port-Scanner/
 │
 ├── PortScanner.py
 ├── scan_results.txt
 └── README.md
-Future Improvements
-UDP Port Scanning
-Service Version Detection
-Banner Grabbing
-Export Results to CSV/JSON
-GUI Interface using Tkinter or PyQt
-OS Detection
-Custom Thread Configuration
-Learning Outcomes
+```
 
-This project helped strengthen understanding of:
+---
 
-TCP/IP Networking
-Socket Programming
-Multithreading in Python
-Queue-based Task Management
-Port Scanning Methodology
-Cybersecurity Fundamentals
+## ⚙️ Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/RohanBankar9104/TCP-Port-Scanner
+
+cd TCP-Port-Scanner
+```
+
+### Verify Python Installation
+
+```bash
+python --version
+```
+
+Python 3.x is required.
+
+---
+
+## ▶️ Usage
+
+Run the scanner:
+
+```bash
+python PortScanner.py
+```
+
+### Example
+
+```text
+Enter target host/IP: scanme.nmap.org
+Start Port: 1
+End Port: 1000
+```
+
+Output:
+
+```text
+Port 22    : OPEN
+Port 80    : OPEN
+Port 443   : OPEN
+Port 8080  : CLOSED
+```
+
+---
+
+## 📸 Sample Output
+
+```text
+============================================================
+TCP Port Scanner
+============================================================
+
+Target: scanme.nmap.org
+IP: 45.33.32.156
+
+Scanning Ports: 1 - 1000
+
+Port 22    : OPEN
+Port 80    : OPEN
+Port 443   : OPEN
+
+============================================================
+Scan Complete
+============================================================
+```
+
+---
+
+## 📝 Logging System
+
+All scan results are automatically saved to:
+
+```text
+scan_results.txt
+```
+
+Example:
+
+```text
+Port 22    : OPEN
+Port 80    : OPEN
+Port 443   : OPEN
+```
+
+This allows users to review results after the scan is completed.
+
+---
+
+## 🎯 Learning Objectives
+
+This project helped develop practical knowledge in:
+
+* TCP/IP Networking
+* Port Scanning Techniques
+* Socket Programming
+* Concurrent Programming
+* Multithreading
+* Queue Management
+* Network Security Fundamentals
+
+---
+
+## 📈 Performance Features
+
+The scanner uses:
+
+* 100 concurrent worker threads
+* Queue-based task management
+* TCP connection testing
+* Timeout controls
+
+These optimizations significantly reduce scanning time compared to a single-threaded implementation.
+
+---
+
+## 🔮 Future Improvements
+
+* UDP Port Scanning
+* Service Version Detection
+* Banner Grabbing
+* Operating System Detection
+* CSV Export Support
+* JSON Report Generation
+* GUI Interface (Tkinter/PyQt)
+* Vulnerability Detection Module
+
+---
+
+## ⚠️ Disclaimer
+
+This tool is intended for educational purposes and authorized security testing only.
+
+Always obtain proper authorization before scanning any network, server, or device that you do not own or have permission to assess.
+
+Unauthorized scanning may violate laws, regulations, or organizational policies.
+
+---
+
+## 👨‍💻 Author
+
+### Rohan Bankar
+
+Cybersecurity Enthusiast | Networking Learner | VAPT
+
+---
+
+## 📄 License
 
 
---Disclaimer--
-
-This tool is intended for educational purposes and authorized security testing only. Always obtain proper permission before scanning any network or system.
-
-
+Feel free to use, modify, and distribute it for educational and learning purposes.
