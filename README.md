@@ -29,7 +29,7 @@ A fast and efficient multithreaded TCP Port Scanner developed in Python. This to
 6.Saves results to a log file.
 
 --Installation--
-git clone https://github.com/RohanBankar9104/Syntecxhub-Internship/blob/main/PortScanner.py
+git clone https://github.com/RohanBankar9104/TCP-Port-Scanner
 
 --Usage--
 python PortScanner.py
